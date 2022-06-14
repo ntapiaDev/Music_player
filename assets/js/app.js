@@ -48,7 +48,7 @@ const play = (i, change) => {
         setTimeout(displayTime, 10);
         curr_track.addEventListener('timeupdate', () => {
             setTimeout(() => avancement.value = curr_track.currentTime / curr_track.duration * 100, 10);
-            displayTime();
+            setTimeout(displayTime, 10);
             if(avancement.value == 100) {
                 track_index = track_index >= (tracks.length - 1) ? 0 : (track_index + 1);
                 play(track_index, true);

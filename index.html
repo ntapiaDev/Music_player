@@ -11,49 +11,56 @@
 </head>
 <body>
     <main>
-        <div class="controls">
-            <div class="prev"><span class="fa-solid fa-circle-arrow-left"></span></div>
-            <div class="play"><span class="fa-solid fa-circle-play"></span></div>
-            <div class="next"><span class="fa-solid fa-circle-arrow-right"></span></div>
-            <div class="volMinus"><span class="fa-solid fa-volume-low"></span></div>
-            <div class="volControl">
-                <input type="range">
+        <div class="controls-is-container">
+            <div class="controls">
+                <div class="prev"><span class="fa-solid fa-circle-arrow-left"></span></div>
+                <div class="play"><span class="fa-solid fa-circle-play"></span></div>
+                <div class="next"><span class="fa-solid fa-circle-arrow-right"></span></div>
+                <div class="volMinus"><span class="fa-solid fa-volume-low"></span></div>
+                <div class="volControl">
+                    <input type="range">
+                </div>
+                <div class="volPlus"><span class="fa-solid fa-volume-high"></span></div>
             </div>
-            <div class="volPlus"><span class="fa-solid fa-volume-high"></span></div>
-        </div>
-        <div class="infos">
-            <p class="artist-name">Nom de l'artiste</p>
-            <div class="infos-container">
-                <p class="title-name">Titre de la chanson</p>
-                <p class="time-left">0</p>
-            </div>
-            <div>
-                <input type="range">
-            </div>
-        </div>
-        <div class="search">
-            <form action="">
-                <label for="search"><span class="fa-solid fa-magnifying-glass"></span></label>
-                <input type="text" name="search" id="search" placeholder="Rechercher">
-            </form>
-        </div>
-        <div class="categories">
-            <ul>
-                <li><a href="">Musique</a></li>
-                <li><a href="">Vidéos</a></li>
-                <li><a href="">Podcasts</a></li>
-            </ul>
-        </div>
-        <div class="titles">
-            <div class="grid">
-                <template>
-                    <div class="title">
-                        <img src="" alt="">
-                        <p></p>
-                        <p></p>
+            <div class="infos-search-container">
+                <div class="infos">
+                    <p class="artist-name">Nom de l'artiste</p>
+                    <div class="infos-container">
+                        <p class="title-name">Titre de la chanson</p>
+                        <p class="time-left">0</p>
                     </div>
-                </template>
-                
+                    <div>
+                        <input type="range">
+                    </div>
+                </div>
+                <div class="search">
+                    <form action="">
+                        <label for="search"><span class="fa-solid fa-magnifying-glass"></span></label>
+                        <input type="text" name="search" id="search" placeholder="Rechercher">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="categories-titles-container">
+            <div class="categories">
+                <ul>
+                    <li><a href="">Musique</a></li>
+                    <li><a href="">Vidéos</a></li>
+                    <li><a href="">Podcasts</a></li>
+                </ul>
+            </div>
+            <div class="titles">
+                <div class="grid">
+                    <template>
+                        <div class="title">
+                            <img src="" alt="">
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </template>
+                </div>
             </div>
         </div>
     </main>

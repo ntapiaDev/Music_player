@@ -24,138 +24,191 @@ main {
     flex-direction: column;
     align-items: center;
 
-    .controls {
+    .controls-is-container {
         width: 100%;
-        height: 15vh;
-        padding: .5em;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-content: space-between;
-
-        div {
-            height:35%;
-            &:not(:nth-child(5)) {
-                box-shadow: $light-shadow;
-                border-radius: .2em;
-            }
-            @extend %flex-center;
-        }
-        div:nth-child(1), div:nth-child(3) {
-            width: 25%;
-        }
-        div:nth-child(2) {
-            width: 35%;
-        }
-        div:nth-child(4), div:nth-child(6) {
-            width: 16%;
-        }
-        div:nth-child(5) {
-            width: 60%;
-            input {
-                width: 100%;
-            }
-        }
-    }
-
-    .infos {
-        width: 90%;
-        height: 15vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-        .artist-name {
-            font-weight: bold;
-        }
-        .infos-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        div {
-            width: 100%;
-            height:35%;
-            @extend %flex-center;
-            input {
-                width: 100%;
-            }
-        }
-    }
-
-    .search {
-        width: 90%;
-        height: 10vh;
-        display: flex;
-        align-items: center;
-
-        form {
-            width: 100%;
-            border: 1px solid #AAA;
-            border-radius: .5em;
-            overflow: hidden;
+        @media screen and (min-width: 1024px) {
             display: flex;
         }
-        label {
-            width: 30px;
-            height: 25px;
-            background-color: #DDD;
-            @extend %flex-center;
-        }
-        input {
+
+        .controls {
             width: 100%;
-            height: 25px;
+            height: 15vh;
             padding: .5em;
-            border: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            @media screen and (min-width: 1024px) {
+                width: 33.3%;
+            }
+    
+            div {
+                height:35%;
+                &:not(:nth-child(5)) {
+                    box-shadow: $light-shadow;
+                    border-radius: .2em;
+                }
+                @extend %flex-center;
+            }
+            div:nth-child(1), div:nth-child(3) {
+                width: 25%;
+            }
+            div:nth-child(2) {
+                width: 35%;
+            }
+            div:nth-child(4), div:nth-child(6) {
+                width: 16%;
+            }
+            div:nth-child(5) {
+                width: 60%;
+                input {
+                    width: 100%;
+                }
+            }
         }
-    }
-
-    .categories {
-        width: 95%;
-        height: 20vh;
-        ul {
-            height: 100%;
+    
+        .infos-search-container {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            list-style: none;
-            border: 1px solid #DDD;
-            li {
-                height: 33.3%;
-                padding-left: .5em;
-                border: 1px solid #DDD;
+            align-items: center;
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            @media screen and (min-width: 1024px) {
+                width: 66.6%;
+            }
+    
+            .infos {
+                width: 90%;
+                @media screen and (min-width: 768px) {
+                    width: 40%;
+                }
+                height: 15vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+        
+                .artist-name {
+                    font-weight: bold;
+                }
+                .infos-container {
+                    display: flex;
+                    justify-content: space-between;
+                }
+        
+                div {
+                    width: 100%;
+                    height:35%;
+                    @extend %flex-center;
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+        
+            .search {
+                width: 90%;
+                @media screen and (min-width: 768px) {
+                    width: 40%;
+                }
+                height: 10vh;
                 display: flex;
                 align-items: center;
-                a {
-                    color: rgb(94, 137, 169);
-                    text-decoration: none;
+        
+                form {
+                    width: 100%;
+                    border: 1px solid #AAA;
+                    border-radius: .5em;
+                    overflow: hidden;
+                    display: flex;
+                }
+                label {
+                    width: 30px;
+                    height: 25px;
+                    background-color: #DDD;
+                    @extend %flex-center;
+                }
+                input {
+                    width: 100%;
+                    height: 25px;
+                    padding: .5em;
+                    border: none;
                 }
             }
         }
     }
 
-    .titles {
-        width: 95%;
-        height: 40%;
-        padding: 1em 0;
+    .categories-titles-container {
+        width: 100%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        align-items: center;
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: .5em;
-
-            .title {
-                padding: .35em;
-                border: 1px solid #DDD;
+        .categories {
+            width: 95%;
+            @media screen and (min-width: 768px) {
+                width: 25%;
+                margin: 1em 2.5em;
+            }
+            height: 20vh;
+            ul {
+                height: 100%;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                p {
-                    margin: .25em 0;
-                    color: rgb(94, 137, 169);
-                    text-align: center;
+                justify-content: center;
+                list-style: none;
+                border: 1px solid #DDD;
+                li {
+                    height: 33.3%;
+                    padding-left: .5em;
+                    border: 1px solid #DDD;
+                    display: flex;
+                    align-items: center;
+                    a {
+                        color: rgb(94, 137, 169);
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    
+        .titles {
+            width: 95%;
+            @media screen and (min-width: 768px) {
+                width: 75%;
+            }
+            padding: 1em 0;
+            display: flex;
+            justify-content: center;
+    
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                @media screen and (min-width: 1024px) {
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                @media screen and (min-width: 1280px) {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+                gap: .5em;
+    
+                .title {
+                    padding: .35em;
+                    border: 1px solid #DDD;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    p {
+                        margin: .25em 0;
+                        color: rgb(94, 137, 169);
+                        text-align: center;
+                    }
                 }
             }
         }
