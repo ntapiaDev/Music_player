@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+main .controls div, main .infos div, main .search label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  width: 95%;
+  min-height: 95vh;
+  margin: 1em 0;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16), 0 6px 6px rgba(0, 0, 0, 0.32);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, 0.16), 0 6px 6px rgba(0, 0, 0, 0.32);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .controls {
+  width: 100%;
+  height: 15vh;
+  padding: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+main .controls div {
+  height: 35%;
+}
+
+main .controls div:not(:nth-child(5)) {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: .2em;
+}
+
+main .controls div:nth-child(1), main .controls div:nth-child(3) {
+  width: 25%;
+}
+
+main .controls div:nth-child(2) {
+  width: 35%;
+}
+
+main .controls div:nth-child(4), main .controls div:nth-child(6) {
+  width: 16%;
+}
+
+main .controls div:nth-child(5) {
+  width: 60%;
+}
+
+main .controls div:nth-child(5) input {
+  width: 100%;
+}
+
+main .infos {
+  width: 90%;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .infos p:nth-child(1) {
+  font-weight: bold;
+}
+
+main .infos div {
+  width: 100%;
+  height: 35%;
+}
+
+main .infos div input {
+  width: 100%;
+}
+
+main .search {
+  width: 90%;
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .search form {
+  width: 100%;
+  border: 1px solid #AAA;
+  border-radius: .5em;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .search label {
+  width: 30px;
+  height: 25px;
+  background-color: #DDD;
+}
+
+main .search input {
+  width: 100%;
+  height: 25px;
+  padding: .5em;
+  border: none;
+}
+
+main .categories {
+  width: 95%;
+  height: 20vh;
+}
+
+main .categories ul {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  border: 1px solid #DDD;
+}
+
+main .categories ul li {
+  height: 33.3%;
+  padding-left: .5em;
+  border: 1px solid #DDD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .categories ul li a {
+  color: #5e89a9;
+  text-decoration: none;
+}
+
+main .titles {
+  width: 95%;
+  height: 40%;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .titles .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: .5em;
+}
+
+main .titles .grid .title {
+  padding: .35em;
+  border: 1px solid #DDD;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .titles .grid .title p {
+  margin: .25em 0;
+  color: #5e89a9;
+  text-align: center;
+}
+/*# sourceMappingURL=style.css.map */
