@@ -65,8 +65,12 @@ main {
         flex-direction: column;
         justify-content: space-evenly;
 
-        p:nth-child(1) {
+        .artist-name {
             font-weight: bold;
+        }
+        .infos-container {
+            display: flex;
+            justify-content: space-between;
         }
 
         div {

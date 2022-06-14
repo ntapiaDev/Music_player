@@ -107,8 +107,17 @@ main .infos {
           justify-content: space-evenly;
 }
 
-main .infos p:nth-child(1) {
+main .infos .artist-name {
   font-weight: bold;
+}
+
+main .infos .infos-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main .infos div {

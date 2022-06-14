@@ -1,7 +1,7 @@
 import tracks from '/assets/js/tracks.js';
 
-const artist = document.querySelector('.infos p:nth-child(1)');
-const title = document.querySelector('.infos p:nth-child(2)');
+const artist = document.querySelector('.artist-name');
+const title = document.querySelector('.title-name');
 
 const volume = document.querySelector('.controls input');
 const avancement = document.querySelector('.infos input');
@@ -22,6 +22,19 @@ let curr_track = document.createElement('audio');
 let track_index = -1;
 let isPlaying = false;
 
+const button = document.querySelector('.play span')
+const setPlay = () => {
+    curr_track.play();
+    isPlaying = true;
+    button.classList.remove('fa-circle-play');
+    button.classList.add('fa-circle-pause');
+}
+const setPause = () => {
+    curr_track.pause();
+    isPlaying = false;
+    button.classList.remove('fa-circle-pause');
+    button.classList.add('fa-circle-play');
+}
 const play = (i, change) => {
     if(track_index !== i || change === true) {
         track_index = i;
@@ -31,15 +44,21 @@ const play = (i, change) => {
         curr_track.volume = volume.value / 100
         avancement.value = 0;
         curr_track.load();
-        curr_track.play();
-        isPlaying = true;
+        setPlay();
+        setTimeout(displayTime, 10);
+        curr_track.addEventListener('timeupdate', () => {
+            setTimeout(() => avancement.value = curr_track.currentTime / curr_track.duration * 100, 10);
+            displayTime();
+            if(avancement.value == 100) {
+                track_index = track_index >= (tracks.length - 1) ? 0 : (track_index + 1);
+                play(track_index, true);
+            }
+        });
     } else if(isPlaying === false) {
-        curr_track.play();
-        isPlaying = true;
+        setPlay();
     } else {
-        curr_track.pause();
-        isPlaying = false;
-    }    
+        setPause();
+    }
 }
 
 //Lancement de la musique !
@@ -67,4 +86,9 @@ next.addEventListener('click', () => {
 volume.addEventListener('change', () => curr_track.volume = volume.value / 100);
 
 //Barre d'avancement
-avancement.addEventListener('change', () => curr_track.currentTime = curr_track.duration * avancement.value / 100);
+avancement.addEventListener('change', () => {
+    curr_track.currentTime = curr_track.duration * avancement.value / 100;
+    displayTime();
+});
+
+const displayTime = () => document.querySelector('.time-left').textContent = Math.round(curr_track.duration - curr_track.currentTime) + ' sec';
